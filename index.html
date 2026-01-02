@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DK BRAND</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 380px;
+      width: 90%;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 25px 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 14px;
+      border: 3px solid #d4af37;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .vip-text {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 12px 0 20px;
+      color: #111;
+    }
+
+    .timer-btn {
+      display: block;
+      background: linear-gradient(135deg, #ff416c, #ff004f);
+      color: #fff;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 50px;
+      margin: 12px 0;
+      width: 100%;
+      border: none;
+      cursor: not-allowed;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(255,0,79,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .telegram-btn {
+      display: block;
+      background: linear-gradient(135deg, #1da1f2, #0d8ddb);
+      color: #fff;
+      font-weight: bold;
+      padding: 14px;
+      border-radius: 50px;
+      margin: 12px 0;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .telegram-btn:hover {
+      background: linear-gradient(135deg, #0d8ddb, #1da1f2);
+      transform: scale(1.05);
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: #444;
+      margin-top: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 480px) {
+      .title { font-size: 22px; }
+      .vip-text { font-size: 14px; }
+      .subtitle { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="satta.jpg" alt="Logo">
+    <div class="title">DK BRAND</div>
+    <div class="subtitle"><span id="subs">29200</span> Subscribers</div>
+    <div class="vip-text">✨ INDIA,S NO.1 CRICKET TIPPER
+     ✨</div>
+
+    <button class="timer-btn" id="countdown">Free Joining Ends In 30 Seconds</button>
+
+    <button class="telegram-btn" id="telegramBtn" onclick="openTelegram()">🚀 JOIN FREE TELEGRAM</button>
+
+    <div class="footer-text">⭐ HURRY UP ! ⭐</div>
+    <div class="footer-text">JOIN OUR FREE TELEGRAM <br>
+    @ DAILY 93% ACCURATE PREDICTION
+    <br>
+    @ FIX REPORT OF EVERY MATCH SESSION
+    <br>
+    @ DAILY TOSS MATCH SESSION FIXED
+    
+  </div>
+
+  <script>
+    // Countdown timer
+    let timeLeft = 30;
+    const countdownBtn = document.getElementById("countdown");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownBtn.textContent = "Free Joining Ends In " + timeLeft + " Seconds";
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdownBtn.textContent = "Offer Expired!";
+        countdownBtn.style.background = "gray";
+        countdownBtn.style.boxShadow = "none";
+        // Auto open Telegram after countdown
+        openTelegram();
+      }
+    }, 1000);
+
+    // Auto increment subscribers
+    let subs = 29200;
+    const subsTarget = 29250;
+    const subsElement = document.getElementById("subs");
+
+    const subsTimer = setInterval(() => {
+      if (subs < subsTarget) {
+        subs++;
+        subsElement.textContent = subs.toLocaleString();
+      } else {
+        clearInterval(subsTimer);
+      }
+    }, 120);
+
+    // Telegram redirect function
+    function openTelegram() {
+      window.location.href = "https://t.me/+9Z84rz8Ot9AzM2E1";
+    }
+  </script>
+
+</body>
+</html>
